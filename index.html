@@ -1,15 +1,57 @@
 <!DOCTYPE html>
 <html lang="fr">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://cdn.tailwindcss.com"></script>
+    <script type="module" src="./scripts/modal.js" defer></script>
     <title>Debug modal</title>
 </head>
+
 <body>
     <section class="max-w-screen-md mx-auto p-5">
         <h1 class="text-2xl font-bold">Hello world</h1>
+        <div id="modal" role="dialog" aria-modal="true" aria-hidden="true" aria-labelledby="1-title"
+            tabindex="-1" class="relative z-10" style="display: none">
+            <div class="fixed inset-0 bg-black bg-opacity-50 transition-opacity"></div>
+
+            <div class="fixed inset-0 overflow-y-auto z-10">
+                <div class="flex p-4 min-h-full justify-center items-center">
+                    <div class="relative sm:my-8 sm:mx-auto w-full h-full sm:max-w-sm md:mb-20 rounded-lg bg-white text-left shadow-xl overflow-hidden transform transition-all">
+                        
+                        <!-- modal tag -->
+
+                        <div class="flex w-full justify-between px-8 py-6 border-b border-gray-500">
+                            <h1 id="1-title" class="text-md font-500">
+                                Titre de la modal
+                            </h1>
+                
+                                <div role="button"
+                                     data-modal-target="modal"
+                                     data-modal-input="close"
+                                     title="Fermer la modale"
+                                     aria-label="Fermer la modale"
+                                     aria-controls="1"
+                                     aria-expanded="false"
+                                     tabindex="0" class="w-6 h-6">
+                                      X
+                                </div>
+                        </div>
+                
+                        <div class="w-full h-full px-8 py-6">
+                            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Odit nostrum ex quisquam provident laudantium, magnam illum nobis modi. Expedita impedit magni voluptates quis provident fuga! Expedita id voluptatum tenetur ut?
+                            Laboriosam nostrum eaque eveniet dolore molestiae assumenda dolorum consequuntur quis fugiat veniam dolor, adipisci magni ipsam excepturi nihil quibusdam nam. Sequi, laudantium tempora quaerat aperiam repellat corrupti omnis excepturi vel?
+                        </div>
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+
+       <button data-modal-target="modal">Ouvrir modal</button>
 
     </section>
 </body>
+
 </html>
